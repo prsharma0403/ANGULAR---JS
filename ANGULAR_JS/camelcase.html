@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp">
+  <w3-test-directive></w3-test-directive>
+  <script>
+  var app= angular.module("myApp", []);
+  app.directive("w3TestDirective",function(){ return { template:"arbind"}})
+  ;</script>
+
+  </body>
+</html>
