@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>vechile inherit charset=""</title>
-  </head>
-  <p id="demo"></p>
-  <script>
-  function vechile(MaxSpeed,Type,Displacement){
-this.maximumspeed="MaxSpeed";
-this.typesofVechile="Type";
-this.Displacementofvech="Displacement";
-}
-vechile.prototype.speed="200";
-vechile.prototype.typeofvech="Honda";
-vechile.prototype.displ="1.2km";
+</head>
+<p id="demo"></p>
+<script>
+    function vechile(MaxSpeed, Type, Displacement) {
+        this.maximumspeed = MaxSpeed;
+        this.typesofVechile = Type;
+        this.Displacementofvech = Displacement;
+    }
+    vechile.prototype.price = 1;
+    vechile.prototype.relasing_date = 2015;
+    vechile.prototype.speed = 90;
+
+    var x = prompt(" maximum  speed");
+    var y = prompt(" Type of vec");
+    var z = prompt("Type distance tarveled");
+    var Bike = new vechile(x, y, z);
 
 
-var Bike=new vechile(150,"yamaha",300);
-document.getElementById("demo").innerHTML=((Bike.speed)+" "+(Bike.typeofvech)+" "+(Bike.displ));
+    document.write("maximum speed is:" + Bike.maximumspeed);
+    document.write("<br>");
 
+    document.write("type of vehicle is:" + Bike.typesofVechile);
+    document.write("<br>");
 
+    document.write("maximum speed is:" + Bike.Displacementofvech);
+    document.write("<br>");
 
+    document.write("price of vehicle is:" + Bike.price);
+    document.write("<br>");
 
-  </script>
-  <body>
+    document.write("relasingdate is:" + Bike.relasingdate);
+    document.write("<br>");
 
-  </body>
+    document.write(" speed is:" + Bike.speed);
+</script>
+
+<body>
+
+</body>
+
 </html>
