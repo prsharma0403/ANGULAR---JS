@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    function friendly(str) {
+  var date1 = str[0];
+  var date2 = str[1];
+  var finalArr = [];
+  var year1 = parseInt(date1.substr(0,4));
+  var month1 = parseInt(date1.substr(5,2));
+  var day1 = parseInt(date1.substr(8,2));
+  document.write("year " + year1 + " month " + month1 + " day " + day1 );
+  var year2 = parseInt(date2.substr(0,4));
+  var month2 = parseInt(date2.substr(5,2));
+  var day2 = parseInt(date2.substr(8,2));
+  document.write("year " + year2 + " month " + month2 + " day " + day2 );
+
+  var newDate1 = new Date(year1, month1, day1);
+  var newDate2 = new Date(year2, month2, day2);
+  var timeDiff = Math.abs(newDate2.getTime() - newDate1.getTime());
+  var dayDiff = Math.ceil(timeDiff/(1000 * 3600 * 24));
+  document.write("dayDiff " + dayDiff);
+  var dateStr1 = "";
+  var dateStr2 = "";
+  if(year1 == year2){
+    if(month1 == month2){
+      if(day1 == day2){
+        dateStr1 = getMonth(month1) + " " + day1 + getSuffix(day1) +", " + year1;
+        finalArr.push(dateStr1);
+      }else{
+        dateStr1 = getMonth(month1) + " " + day1 + getSuffix(day1);
+        dateStr2 = day2 + getSuffix(day2);
+        finalArr.push(dateStr1);
+        finalArr.push(dateStr2);
+      }
+    }else{
+      dateStr1 = getMonth(month1) + " " + day1 + getSuffix(day1) +", " + year1;
+      dateStr2 = getMonth(month2) + " " + day2 + getSuffix(day2);
+      finalArr.push(dateStr1);
+      finalArr.push(dateStr2);
+    }
+  }else{
+    if(dayDiff >= 365){
+      dateStr1 = getMonth(month1) + " " + day1 + getSuffix(day1) +", " + year1;
+      dateStr2 = getMonth(month2) + " " + day2 + getSuffix(day2) +", " + year2;
+      finalArr.push(dateStr1);
+      finalArr.push(dateStr2);
+    }else{
+      if(year1 == 2016){
+        dateStr1 = getMonth(month1) + " " + day1 + getSuffix(day1) ;
+      }else{
+        dateStr1 = getMonth(month1) + " " + day1 + getSuffix(day1) + ", " + year1;
+      }
+      dateStr2 = getMonth(month2) + " " + day2 + getSuffix(day2);
+      finalArr.push(dateStr1);
+      finalArr.push(dateStr2);
+    }
+  }
+document.write(finalArr);
+  return finalArr;
+}
+
+function getMonth(num){
+  switch(num){
+    case 1: return "January";
+    case 2: return "February";
+    case 3: return "March";
+    case 4: return "April";
+    case 5: return "May";
+    case 6: return "June";
+    case 7: return "July";
+    case 8: return "August";
+    case 9: return "September";
+    case 10: return "October";
+    case 11: return "November";
+    case 12: return "December";
+  }
+}
+
+function getSuffix(dig){
+  var a;
+  if(dig > 9){
+    a = dig % 10;
+  }else{
+    a = dig;
+  }
+  switch(a){
+    case 0:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+      return "th";
+    case 1:
+      return "st";
+    case 2:
+      return "nd";
+    case 3:
+      if(dig > 10 && dig < 20)
+       return "th";
+      else
+        return "rd";
+  }
+}
+friendly(["2016-12-01", "2017-02-03"]);
+</script>
+
+
+  </body>
+</html>

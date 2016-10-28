@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+  function friendly(arr) {
+    var firstDateArr = arr[0].split("-");
+    var secondDateArr = arr[1].split("-");
+
+    var firstDate = new Date(firstDateArr);
+    var secondDate  = new Date(secondDateArr);
+
+    var currentYear = new Date().getFullYear();
+
+    var mili = secondDate - firstDate;
+    document.write(mili);
+
+    var result = [];
+
+    if (mili === 0) {
+      result[0] = styleMonth(firstDateArr[1]) + " " + styleDay(firstDateArr[2]) + ", " + firstDateArr[0];
+    } else if (mili < 31536000000) {
+          if (mili > 259200000) {
+              if (firstDateArr[0] == currentYear) {
+                  result[0] = styleMonth(firstDateArr[1]) + " " + styleDay(firstDateArr[2]);
+                  result[1] = styleMonth(secondDateArr[1]) + " " + styleDay(secondDateArr[2]);
+              } else {
+                  result[0] = styleMonth(firstDateArr[1]) + " " + styleDay(firstDateArr[2]) + ", " + firstDateArr[0];
+                  result[1] = styleMonth(secondDateArr[1]) + " " + styleDay(secondDateArr[2]);
+              }
+          }
+          else if (mili <= 259200000) {
+              result[0] = styleMonth(firstDateArr[1]) + " " + styleDay(firstDateArr[2]);
+              result[1] = styleDay(secondDateArr[2]);
+          }
+    } else if (mili >= 31536000000) {
+          result[0] = styleMonth(firstDateArr[1]) + " " + styleDay(firstDateArr[2]) + ", " + firstDateArr[0];
+          result[1] = styleMonth(secondDateArr[1]) + " " + styleDay(secondDateArr[2]) + ", " + secondDateArr[0];
+
+    }
+
+  function styleMonth(str) {
+      if (str == "01") {
+          str = "January";
+      } else if (str == "02") {
+          str = "February";
+      } else if (str == "03") {
+          str = "March";
+      } else if (str == "04") {
+          str = "April";
+      } else if (str == "05") {
+          str = "May";
+      } else if (str == "06") {
+          str = "June";
+      } else if (str == "07") {
+          str = "July";
+      } else if (str == "08") {
+          str = "August";
+      } else if (str == "09") {
+          str = "September";
+      } else if (str == "10") {
+          str = "October";
+      } else if (str == "11") {
+          str = "November";
+      } else if (str == "12") {
+          str = "December";
+      }
+
+      return str;
+  }
+
+  function styleDay(str) {
+      if (str == "01") {
+          str = parseInt(str) + 'st';
+      } else if (str == "02") {
+          str = parseInt(str) + "nd";
+      } else if (str == "03") {
+          str = parseInt(str) + "rd";
+      } else {
+          str = parseInt(str) + "th";
+      }
+      return str;
+  }
+
+     window.alert(result);
+  }
+
+  // friendly(["2016-07-01", "2016-07-04"]); //should return ["July 1st","4th"].
+  // friendly(["2016-12-01", "2017-02-03"]); //should return ["December 1st","February 3rd"].
+  friendly(["2016-12-01",  "2018-11-05"]); //should return ["December 1st, 2016","February 3rd, 2018"].
+  // friendly(["2017-03-01", "2017-05-05"]); //should return ["March 1st, 2017","May 5th"]
+  // friendly(["2018-01-13", "2018-01-13"]); //should return ["January 13th, 2018"].
+  // friendly(["2022-09-05", "2023-09-04"]); //should return ["September 5th, 2022","September 4th"].
+  // friendly(["2022-09-05", "2023-09-05"]); //should return ["September 5th, 2022","September 5th, 2023"].
+
+  </script>
+</body>
+</html>

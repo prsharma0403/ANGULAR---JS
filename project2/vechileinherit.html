@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>vechile inherit charset=""</title>
+  </head>
+  <p id="demo"></p>
+  <script>
+  function vechile(MaxSpeed,Type,Displacement){
+this.maximumspeed="MaxSpeed";
+this.typesofVechile="Type";
+this.Displacementofvech="Displacement";
+}
+vechile.prototype.speed="200";
+vechile.prototype.typeofvech="Honda";
+vechile.prototype.displ="1.2km";
+
+
+var Bike=new vechile(150,"yamaha",300);
+document.getElementById("demo").innerHTML=((Bike.speed)+" "+(Bike.typeofvech)+" "+(Bike.displ));
+
+
+
+
+  </script>
+  <body>
+
+  </body>
+</html>
