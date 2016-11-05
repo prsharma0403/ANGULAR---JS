@@ -1,9 +1,10 @@
-/** 
+** 
 * FileName :
 * CreatedBy :
 * Date:
 * Purpose:
 */
+
 function golfshotsName(strokes, par) {
 if (strokes == 1) {
 return "Hole in One";
