@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>filtering</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+      $("p").eq(0).css("background-color","pink");
+      $("p1").not(".intro").css("background-color", "yellow");
+    });
+    </script>
+
+  </head>
+  <body>
+    <p>donald duck is my favourite()</p>
+    <p class="intro">it is opposite to filter.</p>
+<p class="intro">not intro or except to that it will print</p>
+    <p1>sdsfsfd</p1>
+
+  </body>
+</html>

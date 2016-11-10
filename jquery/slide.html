@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>slideupanddown</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      var div = $("div");
+       div.animate({height: '300px', opacity: '0.4'}, "slow");
+       div.animate({width: '300px', opacity: '0.8'}, "slow");
+       div.animate({height: '100px', opacity: '0.4'}, "slow");
+       div.animate({width: '100px', opacity: '0.8'}, "slow");
+div.animate({height: '300px', opacity: '0.4'}, "slow");
+       div.animate({width: '300px', opacity: '0.8'}, "slow");
+       div.animate({height: '100px', opacity: '0.4'}, "slow");
+       div.animate({width: '100px', opacity: '0.8'}, "slow");div.animate({height: '300px', opacity: '0.4'}, "slow");
+       div.animate({width: '300px', opacity: '0.8'}, "slow");
+       div.animate({height: '100px', opacity: '0.4'}, "slow");
+       div.animate({width: '100px', opacity: '0.8'}, "slow");
+      $("#flip").click(function(){
+
+          $("#panel").slideUp(200);
+        $("#panel").slideDown(500);
+
+          $("div").animate({
+            left:'10px',
+
+
+            height:'toggle',
+          });
+      });
+    });
+    </script>
+    <style>
+    #panel,#flip{
+      padding: 100px;
+      text-align: left;
+      background-color: red;
+      border:solid 5px orange;
+    }
+    #panel{
+      padding:100px;
+      display:none ;
+    }
+  </style>
+
+  </head>
+  <body>
+
+    <div style="  padding: 6px;
+      background-color: green;
+      height:300px;width:100px;position:absolute;">hi fiends</div>
+
+      <br>
+    <div id="flip">click to side down</div>
+    <div id="panel">hii the sharad and the swati and especially the shilpa reddy always happy and smiling</div>
+  </body>
+</html>

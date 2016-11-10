@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>toggle</title>
+    <script type="text/javascript" src="">
+    </script>
+    <script type="text/javascript" language="javascript">
+    $(document).ready(function(){
+      $("#pid").click(function(){
+        $(this).toggleclass("red");
+        });
+    });
+    </script>
+    <style>
+    .red{colour:red;}
+</style>
+
+  </head>
+  <body>
+<p class="red" id="pid"> thyis is the para</p>
+<p class="green">click to see the result</p>
+
+  </body>
+</html>

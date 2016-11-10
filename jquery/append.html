@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>append</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("#button").click(function(){
+      $("h5").append("<b> its for append</b>.")
+
+    });
+  });
+  </script>
+
+  </head>
+  <body>
+
+    <h5>this is the paragraph</h5>
+    <button id="button">Appending</button>
+
+  </body>
+</html>

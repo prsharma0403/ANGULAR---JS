@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>styling</title>
+    <script type="text/javascript"
+    src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+    $(document).ready(function(){
+      $("em").addclass("selected");
+      $("#myid").addclass("highlight");
+    });
+    </script>
+    <style>
+  .selected { color:red; }
+  .highlight { background:yellow; }
+  </style>
+  </head>
+
+  <body>
+    <em title="belive in destiny"> this is the believer.</em>
+    <p id="myid">this is the second para</p>
+
+  </body>
+</html>

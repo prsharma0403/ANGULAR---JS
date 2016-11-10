@@ -1,0 +1,17 @@
+{
+  "name": "java script",
+  "homepage": "https://github.com/prsharma0403/ANGULAR---JS",
+  "authors": [
+    "prsharma0403 <prsharma0403@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
